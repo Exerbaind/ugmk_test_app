@@ -4,15 +4,18 @@ import Details from "./pages/Details";
 
 import "./global.css";
 import ContentLayout from "./layouts/ContentLayout";
+import { AppProvider } from "./store/AppContext";
 
 function App() {
   return (
-    <ContentLayout>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/details" element={<Details />} />
-      </Routes>
-    </ContentLayout>
+    <AppProvider>
+      <ContentLayout>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/details" element={<Details />} />
+        </Routes>
+      </ContentLayout>
+    </AppProvider>
   );
 }
 

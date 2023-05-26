@@ -1,23 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { getProducts } from "../utils/api/getProducts";
+import React from "react";
+import Filter from "../components/Filter";
 
 function Main() {
-  const [products, setProducts] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getProducts();
-      setProducts(data);
-    };
-
-    fetchData();
-  }, []);
-
-  if (products) {
-    return <div>Main</div>;
-  }
-
-  return null;
+  return (
+    <>
+      <Filter />
+    </>
+  );
 }
 
 export default Main;

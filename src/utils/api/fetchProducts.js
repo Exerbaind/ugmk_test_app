@@ -1,4 +1,4 @@
-export const getProducts = async () => {
+export const fetchProducts = async () => {
   try {
     const response = await fetch("http://localhost:3001/products");
     if (response) {

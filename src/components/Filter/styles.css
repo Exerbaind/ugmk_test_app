@@ -1,0 +1,10 @@
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.filterText {
+  font-size: 20px;
+}
