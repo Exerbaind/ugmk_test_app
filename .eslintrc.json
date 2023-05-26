@@ -16,6 +16,7 @@
   },
   "rules": {
     "no-console": ["warn", { "allow": ["error"] }],
-    "import/first": "error"
+    "import/first": "error",
+    "no-unused-vars": "warn"
   }
 }
