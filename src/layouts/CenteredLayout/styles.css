@@ -1,4 +1,4 @@
-.contentLayout {
+.centeredLayout {
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.contentLayout-container {
+.centeredLayout-container {
   width: 1000px;
 
   @media screen and (max-width: 1000px) {

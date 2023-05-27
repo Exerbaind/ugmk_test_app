@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import BorderedLayout from "../../layouts/BorderedLayout";
 
 import "./styles.css";
-import { AppContext } from "../../store/AppContext";
 
 const optionsList = [
   {
@@ -21,6 +20,7 @@ const optionsList = [
 
 const handleChange = (event, changeCurrentFilter) => {
   const filterValue = event.target.value;
+  localStorage.setItem("SAVED_FILTER", filterValue);
   changeCurrentFilter(filterValue);
 };
 
@@ -34,8 +34,7 @@ const renderOptions = (item) => {
   return <option {...optionProps}>{text}</option>;
 };
 
-function Filter() {
-  const { currentFilter, changeCurrentFilter } = useContext(AppContext);
+function Filter({ changeCurrentFilter, currentFilter }) {
   return (
     <BorderedLayout>
       <div className="filter">

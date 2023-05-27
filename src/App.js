@@ -1,21 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
 import Details from "./pages/Details";
+import CenteredLayout from "./layouts/CenteredLayout";
 
 import "./global.css";
-import ContentLayout from "./layouts/ContentLayout";
-import { AppProvider } from "./store/AppContext";
 
 function App() {
   return (
-    <AppProvider>
-      <ContentLayout>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/details" element={<Details />} />
-        </Routes>
-      </ContentLayout>
-    </AppProvider>
+    <CenteredLayout>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/details" element={<Details />} />
+      </Routes>
+    </CenteredLayout>
   );
 }
 
