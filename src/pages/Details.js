@@ -1,7 +1,8 @@
 import React from "react";
+import DetailsPageContainer from "../containers/DetailsPageContainer";
 
 function Details() {
-  return <div>Details</div>;
+  return <DetailsPageContainer />;
 }
 
 export default Details;

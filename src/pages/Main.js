@@ -1,25 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Filter from "../components/Filter";
-import MainChart from "../components/MainChart";
+import React from "react";
+import MainPageContainer from "../containers/MainPageContainer";
 
 function Main() {
-  const [currentFilter, setCurrentFilter] = useState("all");
-
-  useEffect(() => {
-    const savedFilter = localStorage.getItem("SAVED_FILTER");
-    if (savedFilter) {
-      setCurrentFilter(savedFilter);
-    }
-  }, []);
-  return (
-    <>
-      <Filter
-        currentFilter={currentFilter}
-        changeCurrentFilter={setCurrentFilter}
-      />
-      <MainChart currentFilter={currentFilter} />
-    </>
-  );
+  return <MainPageContainer />;
 }
 
 export default Main;

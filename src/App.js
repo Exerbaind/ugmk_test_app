@@ -10,7 +10,7 @@ function App() {
     <CenteredLayout>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/details/:factoryID/:monthID" element={<Details />} />
       </Routes>
     </CenteredLayout>
   );
