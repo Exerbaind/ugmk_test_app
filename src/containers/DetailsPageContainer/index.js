@@ -1,15 +1,15 @@
 import React from "react";
-import { useFactoriesFetch } from "../../hooks/useFactoriesFetch";
 import { useParams } from "react-router-dom";
 import { FABRICS_LIST, MONTH_LIST } from "../../utils/constants";
 
 import "./styles.css";
 import PieChart from "../../components/PieChart";
 import createDetailsData from "../../utils/createDetailsData";
+import { useFactoryFetch } from "../../hooks/useFactoryFetch";
 
 function DetailsPageContainer() {
   const { factoryID, monthID } = useParams();
-  const { data } = useFactoriesFetch(factoryID, monthID);
+  const { data } = useFactoryFetch(factoryID, monthID);
 
   if (data) {
     const factoryData = createDetailsData(data, monthID);
