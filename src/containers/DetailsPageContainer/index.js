@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { FABRICS_LIST, MONTH_LIST } from "../../utils/constants";
+import PieChart from "../../components/PieChart";
+import { useFactoryFetch } from "../../hooks/useFactoryFetch";
+import createDetailsChartData from "../../utils/createDetailsChartData";
 
 import "./styles.css";
-import PieChart from "../../components/PieChart";
-import createDetailsData from "../../utils/createDetailsData";
-import { useFactoryFetch } from "../../hooks/useFactoryFetch";
 
 function DetailsPageContainer() {
   const { factoryID, monthID } = useParams();
@@ -16,7 +16,7 @@ function DetailsPageContainer() {
   if (isLoading) return <h1 className="textCentered">Загружаем...</h1>;
 
   if (data) {
-    const factoryData = createDetailsData(data, monthID);
+    const factoryData = createDetailsChartData(data);
     const title = `Статистика по продукции ${FABRICS_LIST[factoryID]} за ${MONTH_LIST[monthID]}`;
     return (
       <div className="details">
