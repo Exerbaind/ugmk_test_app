@@ -46,8 +46,8 @@ const createMonthData = (key, data, currentFilter) => {
     0
   );
 
-  const factoryCount1Tons = factoryCount1 && (factoryCount1 / 1000).toFixed(0);
-  const factoryCount2Tons = factoryCount2 && (factoryCount2 / 1000).toFixed(0);
+  const factoryCount1Tons = factoryCount1 && Math.round(factoryCount1 / 1000);
+  const factoryCount2Tons = factoryCount2 && Math.round(factoryCount2 / 1000);
 
   return {
     month: MONTH_LIST[key],
