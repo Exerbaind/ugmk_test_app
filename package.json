@@ -13,7 +13,9 @@
   },
   "scripts": {
     "start": "json-server --watch products.json --port 3001 & react-scripts start --port 3000",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "dockerize": "docker compose build",
+    "start-container": "docker-compose up -d && docker-compose rm -f"
   },
   "browserslist": {
     "production": [
