@@ -9,7 +9,11 @@ import { useFactoryFetch } from "../../hooks/useFactoryFetch";
 
 function DetailsPageContainer() {
   const { factoryID, monthID } = useParams();
-  const { data } = useFactoryFetch(factoryID, monthID);
+  const { data, isLoading, isError } = useFactoryFetch(factoryID, monthID);
+
+  if (isError) return <h1 className="textCentered">Что-то пошло не так</h1>;
+
+  if (isLoading) return <h1 className="textCentered">Загружаем...</h1>;
 
   if (data) {
     const factoryData = createDetailsData(data, monthID);

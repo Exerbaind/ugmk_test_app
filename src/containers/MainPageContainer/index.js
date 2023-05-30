@@ -10,7 +10,12 @@ import createMainChartData from "../../utils/createMainChartData";
 function MainPageContainer() {
   const savedFilter = localStorage.getItem("SAVED_FILTER") || "all";
   const [currentFilter, setCurrentFilter] = useState(savedFilter);
-  const { data } = useProductsFetch(currentFilter);
+  const { data, isError, isLoading } = useProductsFetch(currentFilter);
+
+  if (isError) return <h1 className="textCentered">Что-то пошло не так</h1>;
+
+  if (isLoading) return <h1 className="textCentered">Загружаем...</h1>;
+
   if (data) {
     const chartData = createMainChartData(data, currentFilter);
     return (

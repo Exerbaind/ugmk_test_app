@@ -12,10 +12,12 @@
     "swr": "^2.1.5"
   },
   "scripts": {
-    "start": "json-server --watch products.json --port 3001 & react-scripts start --port 3000",
+    "start:server": "json-server --watch products.json --port 3001",
+    "start:client": "react-scripts start --port 3000",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
     "build": "react-scripts build",
-    "dockerize": "docker compose build",
-    "start-container": "docker-compose up -d && docker-compose rm -f"
+    "dockerize": "docker build -t ugmk_test_app .",
+    "start-container": "docker run --name ugmk_test_app -p 3000:3000 -d --rm ugmk_test_app"
   },
   "browserslist": {
     "production": [
@@ -30,6 +32,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
