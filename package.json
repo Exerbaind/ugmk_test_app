@@ -17,7 +17,8 @@
     "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
     "build": "react-scripts build",
     "dockerize": "docker build -t ugmk_test_app .",
-    "start-container": "docker run --name ugmk_test_app -p 3000:3000 -d --rm ugmk_test_app"
+    "start-container": "docker run --name ugmk_test_app -p 3000:3000 -d --rm ugmk_test_app",
+    "stop-container": "docker stop ugmk_test_app"
   },
   "browserslist": {
     "production": [
