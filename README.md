@@ -26,7 +26,7 @@
 
 Запускает docker container на основе сгенерированного docker image на http://localhost:3000
 
-### `npm run start-stop`
+### `npm run stop-container`
 
 Останавливает docker container с последющим его удалением
 
