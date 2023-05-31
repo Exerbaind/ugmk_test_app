@@ -1,6 +1,5 @@
 import useSWR from "swr/immutable";
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import { fetcher } from "../utils/fetcher";
 
 export const useProductsFetch = () => {
   const { data, error, isLoading } = useSWR(
